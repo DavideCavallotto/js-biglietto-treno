@@ -8,22 +8,32 @@
     const passengerAge = prompt('Quanti anni hai?')
     console.log(passengerAge)
 
-// - dichiarare prezzo base del biglietto
+// - dichiarare prezzo al km
     const priceForKm = 0.21 
+
+// - dichiarare prezzo base del biglietto
+    const basePrice = priceForKm * passengerKm
+    console.log(basePrice)
 
 // - applicare sconto del 20% se il passegero è minorenne
     let priceDiscount
         // - sconto minorenni
         if(passengerAge < 18) {
         console.log('20% di sconto')
+        priceDiscount = ((priceForKm * passengerKm * 20) / 100) 
+        console.log(priceDiscount)
         }
+        
 // - applicare sconto del 40% se il passegero ha un età superiore a 65 anni
         // sconto anziani
         else if(passengerAge > 65) {
-        console.log('40% di sconto')    
+        console.log('40% di sconto') 
+        priceDiscount = ((priceForKm * passengerKm * 40) / 100)    
         }         
 
 // - non applicare sconto se il passegero non rispetta le regole delle sconto
     
 
 // - calcolare il prezzo del biglietto seguendo le regole di sconto appropriate
+    const totalPrice = basePrice - priceDiscount
+    console.log(totalPrice)
